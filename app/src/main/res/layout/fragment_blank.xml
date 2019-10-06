@@ -22,6 +22,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="fragment1" />
 
 </LinearLayout>

@@ -33,12 +33,6 @@ public class BlankFragment2 extends Fragment implements View.OnClickListener,com
         return inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
     }
 
-    @Override
-    public void onClick(View v) {
-        String string=edt1.getText().toString();
-        com2.respond2(string);
-
-    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -48,10 +42,16 @@ public class BlankFragment2 extends Fragment implements View.OnClickListener,com
         edt1 = getActivity().findViewById(R.id.editText1);
         btn1.setOnClickListener(this);
     }
+    @Override
+    public void onClick(View v) {
+        String str=edt1.getText().toString();
+        com2.respond2(str);
+
+    }
 
     @Override
     public void respond1(String data) {
-        edt1.setText(" "+ data);
+        edt1.setText(""+ data);
     }
 
     @Override
