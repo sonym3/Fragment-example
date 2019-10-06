@@ -20,7 +20,7 @@ public class BlankFragment2 extends Fragment implements View.OnClickListener,com
 
     Button btn1;
     EditText edt1;
-    communicator com;
+    communicator com2;
     public BlankFragment2() {
         // Required empty public constructor
     }
@@ -36,14 +36,14 @@ public class BlankFragment2 extends Fragment implements View.OnClickListener,com
     @Override
     public void onClick(View v) {
         String string=edt1.getText().toString();
-        com.respond2(string);
+        com2.respond2(string);
 
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        com = (communicator)getActivity();
+        com2 = (communicator)getActivity();
         btn1 = getActivity().findViewById(R.id.button1);
         edt1 = getActivity().findViewById(R.id.editText1);
         btn1.setOnClickListener(this);
