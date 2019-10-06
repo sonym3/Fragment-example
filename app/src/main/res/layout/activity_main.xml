@@ -11,14 +11,14 @@
         android:id="@+id/fragment"
         android:name="com.example.fragment.BlankFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"/>
 
     <fragment
         android:id="@+id/fragment2"
         android:name="com.example.fragment.BlankFragment2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
