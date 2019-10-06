@@ -16,11 +16,11 @@ import android.widget.EditText;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment2 extends Fragment implements View.OnClickListener{
+public class BlankFragment2 extends Fragment implements View.OnClickListener,communicator{
 
     Button btn1;
     EditText edt1;
-
+    communicator com;
     public BlankFragment2() {
         // Required empty public constructor
     }
@@ -35,11 +35,27 @@ public class BlankFragment2 extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        String string=edt1.getText().toString();
+        com.respond2(string);
 
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        com = (communicator)getActivity();
+        btn1 = getActivity().findViewById(R.id.button1);
+        edt1 = getActivity().findViewById(R.id.editText1);
+        btn1.setOnClickListener(this);
+    }
+
+    @Override
+    public void respond1(String data) {
+        edt1.setText(" "+ data);
+    }
+
+    @Override
+    public void respond2(String data) {
+
     }
 }

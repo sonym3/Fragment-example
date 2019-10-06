@@ -16,7 +16,7 @@ import android.widget.EditText;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment extends Fragment implements View.OnClickListener {
+public class BlankFragment extends Fragment implements View.OnClickListener,communicator {
 
     Button btn;
     EditText edt;
@@ -35,11 +35,26 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        String string = edt.getText().toString();
+        com.respond1(string);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        com = (communicator) getActivity();
+        btn=getActivity().findViewById(R.id.button);
+        edt= getActivity().findViewById(R.id.editText);
+        btn.setOnClickListener(this);
+    }
+
+    @Override
+    public void respond1(String data) {
+
+    }
+
+    @Override
+    public void respond2(String data) {
+        edt.setText(" " + data);
     }
 }
